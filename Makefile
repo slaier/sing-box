@@ -13,6 +13,13 @@ PREFIX ?= $(shell go env GOPATH)
 
 .PHONY: test release docs build
 
+sing-box.upx: sing-box
+	-rm sing-box.upx
+	upx -o sing-box.upx sing-box
+
+sing-box: Makefile
+	GOARCH=arm GOARM=7 go build $(PARAMS) -tags "with_clash_api" $(MAIN)
+
 build:
 	export GOTOOLCHAIN=local && \
 	go build $(MAIN_PARAMS) $(MAIN)
