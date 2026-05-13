@@ -18,7 +18,7 @@ sing-box.upx: sing-box
 	upx -o sing-box.upx sing-box
 
 sing-box: Makefile
-	GOARCH=arm GOARM=7 go build $(PARAMS) -tags "with_clash_api" $(MAIN)
+	CGO_ENABLED=0 GOARCH=arm GOARM=7 go build $(PARAMS) -tags "with_clash_api with_utls badlinkname tfogo_checklinkname0" $(MAIN)
 
 build:
 	export GOTOOLCHAIN=local && \

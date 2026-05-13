@@ -8,6 +8,7 @@
 /dist/
 /sing-box
 /sing-box.exe
+/sing-box.upx
 /build/
 /*.jar
 /*.aar
